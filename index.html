@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Yoga Devanand Tunja | Paz, Verdad, Amor y Armonía</title>
+    <style>
+
+   .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background-color: #f7f6f3;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: grayscale(10%);
+      opacity: 0.95;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: #3a3a3a;
+      font-weight: 600;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #6b6b6b;
+    }
+/*css original de aqui en adelante */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4A5D23;
+            --secondary: #8B7355;
+            --accent: #D4A574;
+            --light: #F5F1E8;
+            --dark: #2C3E50;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(74, 93, 35, 0.7), rgba(74, 93, 35, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%234A5D23" width="1200" height="800"/><path fill="%23667eea" opacity="0.1" d="M0 400 Q300 200 600 400 T1200 400 V800 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero.has-media {
+            background: none;
+        }
+
+        .hero-video, .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(74, 93, 35, 0.6), rgba(74, 93, 35, 0.7));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1rem auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefits {
+            background: var(--light);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+
+       .video-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-frame[src=""] {
+            display: none;
+        }
+
+        .video-frame[src=""]:not([src]) + .video-placeholder {
+            display: flex;
+        }
+
+        .video-frame[src]:not([src=""]) ~ .video-placeholder {
+            display: none;
+        }
+
+
+        .video-placeholder {
+            background: rgba(0,0,0,0.3);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .gallery {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+
+        /* Estilos para las imágenes dentro de la galería */
+        .gallery-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio sin distorsión */
+            object-position: center; /* Centra la imagen */
+            display: block;
+        }
+
+        /* Alternativa: Si prefieres que la imagen se contenga completamente */
+        .gallery-placeholder img.contain {
+            object-fit: contain; /* Muestra la imagen completa sin recortar */
+            background: #000; /* Fondo negro para las barras laterales */
+        }
+
+        /* Efecto de zoom suave en hover sobre la imagen */
+        .gallery-item:hover .gallery-placeholder img {
+            transform: scale(1.1);
+            transition: transform 0.5s ease;
+        }
+
+ /* Lightbox Styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        /* Botón de cerrar */
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10000;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-close::before,
+        .lightbox-close::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background: white;
+        }
+
+        .lightbox-close::before {
+            transform: rotate(45deg);
+        }
+
+        .lightbox-close::after {
+            transform: rotate(-45deg);
+        }
+
+        /* Botones de navegación */
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 24px;
+            color: white;
+            user-select: none;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* Contador de imágenes */
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* Animación */
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+
+        .quotes-section {
+            background: var(--dark);
+            color: white;
+        }
+
+        .master-image-container {
+            max-width: 300px;
+            margin: 2rem auto 3rem;
+            position: relative;
+        }
+
+        .master-image {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: block;
+        }
+
+        .master-image[src=""] {
+            display: none;
+        }
+
+        .master-image-placeholder {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .master-image:not([src=""]) ~ .master-image-placeholder {
+            display: none;
+        }
+
+        .master-image-placeholder span {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .master-image-placeholder p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+         .announcements {
+            background: var(--light);
+            padding: 5rem 2rem;
+        }
+
+        .announcements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .announcement-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+.quotes-section            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .announcement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .announcement-image {
+            position: relative;
+            width: 100%;
+            padding-top: 133.33%; /* Ratio 3:4 (vertical como Instagram/Facebook) */
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            overflow: hidden;
+        }
+
+        .announcement-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .announcement-image img[src=""] {
+            display: none;
+        }
+
+        .announcement-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .announcement-image img:not([src=""]) ~ .announcement-placeholder {
+            display: none;
+        }
+
+        .announcement-placeholder span {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .announcement-info {
+            padding: 1.5rem;
+        }
+
+        .announcement-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .announcement-date {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .announcement-info p {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .quote-carousel {
+            max-width: 800px;
+            margin: 3rem auto;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-top: 1.5rem;
+        }
+
+        .classes {
+            background: var(--light);
+        }
+
+        .schedule {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+
+        .schedule-item:hover {
+            background: var(--light);
+        }
+
+        .contact {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        .logo {
+          font-size: 1.2rem;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+        }
+
+        .logo-icon {
+          width: 1.4em;
+          height: 1.4em;
+          object-fit: contain;
+          vertical-align: middle;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .social-btn.facebook {
+            background: #1877F2;
+        }
+
+        .social-btn.facebook:hover {
+            background: #145dbf;
+        }
+
+        .social-btn.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-btn.youtube {
+            background: #FF0000;
+        }
+
+        .social-btn.youtube:hover {
+            background: #cc0000;
+        }
+
+         /* Estilos del botón de WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-button:active {
+            transform: scale(0.95);
+        }
+
+        .whatsapp-button svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        /* Tooltip opcional */
+        .whatsapp-button::before {
+            content: '¡Comunicate!';
+            position: absolute;
+            right: 70px;
+            background: #333;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            font-size: 14px;
+        }
+
+        .whatsapp-button:hover::before {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-button svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 0.75rem;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .lightbox-close {
+                width: 35px;
+                height: 35px;
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+            <img src="img/Logo-SIRD.png" alt="Escudo Devanan" class="logo-icon">Yoga Devanand </div>
+           
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#anuncios">Anuncios</a></li>
+                <li><a href="#clases">Clases</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero has-media">
+        <!-- Opción 1: Para usar VIDEO de fondo, descomenta las siguientes 2 líneas y agrega la URL de tu video -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="videos/practica_1.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Opción 2: Para usar IMAGEN de fondo, descomenta la siguiente línea y agrega la URL de tu imagen -->
+        <!--<img class="hero-image" src="imagenes/ofrenda_1.jpg" alt="Centro Yoga Devanand">-->
+        
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Centro Yoga Devanand Tunja</h1>
+            <p>Mantra Yoga Meditación</p>
+            <p>Paz • Verdad • Amor • Armonía</p>
+            <a href="#contacto" class="cta-button">Comienza tu Transformación</a>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <div class="container">
+            <h2>Una Práctica Milenaria, Una Transformación Profunda</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                El Centro Cultural Yoga Devanand en Tunja te invita a descubrir el poder transformador del Mantra Yoga Meditación, 
+                una técnica ancestral transmitida fielmente de maestro a discípulo bajo las enseñanzas del Swami Gurú Devanand Saraswati Ji Maharaj.
+            </p>
+
+            <section class="services">
+              <div class="card">
+                <div class="card-icon">
+                  <img src="img/gif_loto.gif" alt="Paz y meditación">
+                </div>
+                <h3>Paz Interior</h3>
+                <p>Conecta con tu respiración y equilibra tu energía.</p>
+              </div>
+
+              <div class="card">
+                <div class="card-icon">
+                  <img src="img/yoga_playa.jpg" alt="Yoga consciente">
+                </div>
+                <h3>Yoga Consciente</h3>
+                <p>Movimiento, fuerza y armonía para tu cuerpo.</p>
+              </div>
+
+              <div class="card">
+                <div class="card-icon">
+                  <img src="img/meditantes.png" alt="Meditación">
+                </div>
+                <h3>Meditación</h3>
+                <p>Silencio, enfoque y claridad mental.</p>
+              </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <h2>Los Beneficios del Yoga en tu Vida</h2>
+            <div class="about-grid">
+                <div class="card">
+                    <h3>Reduce el Estrés</h3>
+                    <p>Aprende técnicas de respiración y meditación que calman la mente y liberan tensiones acumuladas.</p>
+                </div>
+                <div class="card">
+                    <h3>Mejora la Concentración</h3>
+                    <p>Desarrolla un enfoque mental claro que te ayudará en todas las áreas de tu vida.</p>
+                </div>
+                <div class="card">
+                    <h3>Flexibilidad y Fuerza</h3>
+                    <p>Aumenta tu capacidad física de manera gradual y consciente, respetando tu propio ritmo.</p>
+                </div>
+                <div class="card">
+                    <h3>Autoconocimiento</h3>
+                    <p>Descubre tu verdadero potencial y propósito a través de la introspección guiada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="video-section">
+       
+        <div class="container">
+            <h2 style="color: white;">Clases y Enseñanzas</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                Explora nuestras sesiones grabadas y aprende sobre la filosofía del yoga
+            </p>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe 
+                            class="video-frame" 
+                            src="https://www.youtube.com/embed/DJ8sUCwIc8Y" 
+                            title="Técnicas de Meditación"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Introducción al Mantra Yoga</h3>
+                        <p>Conoce los fundamentos de nuestra práctica</p>
+                    </div>
+                </div>
+                 <div class="video-card">
+                    <div class="video-container">
+                        <iframe 
+                            class="video-frame" 
+                            src="https://www.youtube.com/embed/0PCvNI8yXt4" 
+                            title="Técnicas de Meditación"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Técnicas de Meditación</h3>
+                        <p>Aprende a meditar paso a paso</p>
+                    </div>
+                </div>
+                 <div class="video-card">
+                    <div class="video-container">
+                        <iframe 
+                            class="video-frame" 
+                            src="https://www.youtube.com/embed/Nq7e4opx8JY" 
+                            title="Técnicas de Meditación"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Clase Completa de Yoga</h3>
+                        <p>Sesión guiada para todos los niveles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <h2>Nuestra Comunidad en Imágenes</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder"><img src="img\galeria\instructores.jpg" ></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder"><img src="img\galeria\hatha yoga.jpg"> </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder"><img src="img\galeria\ofrenda 2.jpg" > </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder"><img src="img\galeria\ofrenda.jpg" > </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder"><img src="img\galeria\retiro_2025.jpg" > </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder"><img src="img\galeria\grupo.jpg" alt="grupo"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" id="lightbox-close"></div>
+        <div class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</div>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-nav lightbox-next" id="lightbox-next">›</div>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 6</div>
+    </div>
+
+    <section id="anuncios" class="announcements">
+        <div class="container">
+            <h2>Actividades del Mes</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                Mantente informado sobre nuestras conferencias, iniciaciones y eventos especiales
+            </p>
+            
+            <div class="announcements-grid">
+                <!-- Anuncio 1 -->
+                <div class="announcement-card">
+                    <div class="announcement-image">
+                        <!-- Reemplaza IMAGEN_URL con la URL de tu imagen vertical (formato Instagram/Facebook) -->
+                        <img src="" alt="Actividad 1">
+                        <!-- Placeholder mientras no hay imagen -->
+                        <div class="announcement-placeholder">
+                            <span>📅</span>
+                            <p>Próximamente</p>
+                        </div>
+                    </div>
+                    <div class="announcement-info">
+                        <h3>Conferencia de Filosofía Yoga</h3>
+                        <p class="announcement-date">📅 Sábado 21 de Febrero</p>
+                        <p>Nutrición consciente y manejo del estrés a través del yoga</p>
+                    </div>
+                </div>
+
+                <!-- Anuncio 2 -->
+                <div class="announcement-card">
+                    <div class="announcement-image">
+                        <img src="" alt="Actividad 2">
+                        <div class="announcement-placeholder">
+                            <span>🧘</span>
+                            <p>Próximamente</p>
+                        </div>
+                    </div>
+                    <div class="announcement-info">
+                        <h3>Iniciación Hatha Yoga Nivel 1</h3>
+                        <p class="announcement-date">📅 Domingo 23 de Enero</p>
+                        <p>Ceremonia de iniciación para nuevos practicantes</p>
+                    </div>
+                </div>
+
+                <!-- Anuncio 3 -->
+                <div class="announcement-card">
+                    <div class="announcement-image">
+                        <img src="" alt="Actividad 3">
+                        <div class="announcement-placeholder">
+                            <span>✨</span>
+                            <p>Próximamente</p>
+                        </div>
+                    </div>
+                    <div class="announcement-info">
+                        <h3>Meditación Colectiva</h3>
+                        <p class="announcement-date">📅 Todos los Sábados 6:40 PM</p>
+                        <p>Sesión abierta gratuita para toda la comunidad</p>
+                    </div>
+                </div>
+
+                <!-- Anuncio 4 - Puedes agregar más copiando este bloque -->
+                <div class="announcement-card">
+                    <div class="announcement-image">
+                        <img src="" alt="Actividad 4">
+                        <div class="announcement-placeholder">
+                            <span>🕉️</span>
+                            <p>Próximamente</p>
+                        </div>
+                    </div>
+                    <div class="announcement-info">
+                        <h3>Taller de Mantras</h3>
+                        <p class="announcement-date">📅 Viernes 27 de Febrero</p>
+                        <p>Aprende el poder transformador de los mantras sagrados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="frases" class="quotes-section">
+        <div class="container">
+            <h2 style="color: white;">Enseñanzas del Maestro</h2>
+
+             <!-- Imagen del Maestro o Símbolo -->
+            <div class="master-image-container">
+                <img src="img/Maestro_Guru_Devanand.jpg" alt="Maestro Devanand" class="master-image">
+                <!-- Placeholder mientras no hay imagen -->
+                <div class="master-image-placeholder">
+                    <span>🕉️</span>
+                    <p>Imagen del Maestro</p>
+                </div>
+            </div>
+
+            <div class="quote-carousel">
+                <div class="quote">
+                    "La paz que buscas en el mundo exterior, primero debes encontrarla dentro de ti mismo."
+                </div>
+                <div class="quote-author">- Swami Gurú Devanand Saraswati Ji Maharaj</div>
+            </div>
+            <div class="quote-carousel" style="margin-top: 3rem;">
+                <div class="quote">
+                    "El yoga no es una práctica física, es un camino hacia la realización del ser."
+                </div>
+                <div class="quote-author">- Enseñanzas de la SIRD</div>
+            </div>
+            <div class="quote-carousel" style="margin-top: 3rem;">
+                <div class="quote">
+                    "En la quietud de la meditación, descubres la verdadera naturaleza de tu existencia."
+                </div>
+                <div class="quote-author">- Filosofía Yoga Devanand</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clases" class="classes">
+        <div class="container">
+            <h2>Horarios y Actividades</h2>
+            <div class="schedule">
+                <div class="schedule-item">
+                    <div>
+                        <h3>Clases para todos</h3>
+                        <p>Introducción al Hatha Yoga</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>Varios horarios disponibles</strong>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div>
+                        <h3>Clases adultos</h3>
+                        <p>Práctica avanzada para estudiantes de tercera edad</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>Semanal</strong>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div>
+                        <h3>Actividades Gratuitas</h3>
+                        <p>Sesiones comunitarias abiertas al público</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>Sábados 6:40 PM</strong>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div>
+                        <h3>Conferencias de Filosofía Yoga</h3>
+                        <p>Nutrición, salud, espiritualidad y manejo del estrés</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>Consultar calendario</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 style="color: white;">Contáctanos</h2>
+            <div class="contact-grid">
+                <div>
+                    <h3>Visítanos</h3>
+                    <div class="contact-info">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Dirección</strong><br>
+                            Transversal 9A No. 28A-05<br>
+                            Barrio Maldonado, Tunja, Boyacá
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <strong>Teléfonos:</strong><br>
+                            313 324 4257<br>
+                            318 366 1146
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            yogadevanandtunja@gmail.com
+                        </div>
+                    </div>
+                        <h3 style="margin-top: 2rem;">Síguenos en Redes Sociales</h3>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/mantrayoga.meditacion" target="_blank" class="social-btn facebook" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/yogadevanandtunja" target="_blank" class="social-btn instagram" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" class="social-btn youtube" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Horario de Atención</h3>
+                    <p style="margin-bottom: 1rem;">Nos encantaría conocerte y ayudarte a comenzar tu práctica de yoga.</p>
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
+                        <p><strong>🗓️ Actividades sin costo:</strong></p>
+                        <p style="font-size: 1.2rem; margin-top: 0.5rem;">Sábados a las 6:40 PM</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">¡Todos son bienvenidos!</p>
+                    </div>
+                </div>
+                <div>
+                      <!-- Botón de WhatsApp -->
+                    <a href="https://wa.me/573183661146" 
+                       class="whatsapp-button" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Contactar por WhatsApp">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.832.744 5.488 2.048 7.792L0 32l8.416-2.048C10.656 31.264 13.248 32 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.44c-2.576 0-4.992-.72-7.04-1.952l-.512-.288-5.024 1.216 1.248-4.896-.336-.544A13.376 13.376 0 012.56 16C2.56 8.576 8.576 2.56 16 2.56S29.44 8.576 29.44 16 23.424 29.44 16 29.44z"/>
+                            <path d="M22.784 19.36c-.384-.192-2.272-1.12-2.624-1.248-.352-.128-.608-.192-.864.192-.256.384-1.024 1.248-1.248 1.504-.224.256-.448.288-.832.096-.384-.192-1.632-.608-3.104-1.92-1.152-1.024-1.92-2.304-2.144-2.688-.224-.384-.016-.592.176-.784.16-.16.384-.448.576-.672.192-.224.256-.384.384-.64.128-.256.064-.48-.032-.672-.096-.192-.864-2.08-1.184-2.848-.32-.752-.64-.64-.864-.64h-.736c-.256 0-.672.096-1.024.48-.352.384-1.344 1.312-1.344 3.2s1.376 3.712 1.568 3.968c.192.256 2.688 4.16 6.56 5.76 3.872 1.6 3.872 1.056 4.576 1.024.704-.032 2.272-.928 2.592-1.824.32-.896.32-1.664.224-1.824-.096-.16-.352-.256-.736-.448z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>Sociedad Internacional de Realización Divina</strong></p>
+            <p>Centro Cultural Yoga Devanand - Sede Tunja</p>
+            <p style="margin-top: 1rem;">Fundado sobre los principios de Paz, Verdad, Amor y Armonía</p>
+            <p style="margin-top: 1rem; opacity: 0.7;">© 2025 Centro Yoga Devanand Tunja. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        
+        // Seleccionar elementos galeria
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+
+        let currentIndex = 0;
+        let images = [];
+
+        // Recopilar todas las imágenes
+        galleryItems.forEach((item, index) => {
+            const img = item.querySelector('img');
+            images.push({
+                src: img.src,
+                alt: img.alt
+            });
+
+            // Evento de clic en cada imagen
+            item.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+
+        // Abrir lightbox
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightbox();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll
+        }
+
+        // Cerrar lightbox
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restaurar scroll
+        }
+
+        // Actualizar contenido del lightbox
+        function updateLightbox() {
+            lightboxImg.src = images[currentIndex].src;
+            lightboxImg.alt = images[currentIndex].alt;
+            lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+        }
+
+        // Imagen anterior
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLightbox();
+        }
+
+        // Imagen siguiente
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLightbox();
+        }
+
+        // Eventos de clic
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', prevImage);
+        lightboxNext.addEventListener('click', nextImage);
+
+        // Cerrar al hacer clic fuera de la imagen
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Navegación con teclado
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            switch(e.key) {
+                case 'Escape':
+                    closeLightbox();
+                    break;
+                case 'ArrowLeft':
+                    prevImage();
+                    break;
+                case 'ArrowRight':
+                    nextImage();
+                    break;
+            }
+        });
+
+        // Soporte para gestos táctiles (swipe)
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        lightbox.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextImage(); // Swipe left
+            }
+            if (touchEndX > touchStartX + 50) {
+                prevImage(); // Swipe right
+            }
+        }//fin galeria
+    </script>
+</body>
+</html>

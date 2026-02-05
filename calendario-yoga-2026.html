@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario 2026 - Centro Yoga Devanand Tunja</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8b4b8 0%, #d89ba0 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #c9667e 0%, #d88c9a 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .vision-section {
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+            gap: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            align-items: center;
+        }
+
+        .image-placeholder {
+            width: 180px;
+            height: 180px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            border: 5px solid #fff;
+            overflow: hidden;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .vision-content {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .vision-item {
+            margin-bottom: 20px;
+        }
+
+        .vision-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .vision-item h3 {
+            color: #1e3c72;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+
+        .vision-item p {
+            color: #555;
+            line-height: 1.7;
+            text-align: justify;
+            font-style: italic;
+        }
+
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+
+        .info-card h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .info-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 20px 30px;
+            background: #e9ecef;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .legend-color.event {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .legend-color.holiday {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .legend-color.wednesday {
+            background: #e6d5f5;
+        }
+
+        .legend-color.saturday {
+            background: #b3e5fc;
+        }
+
+        .legend-color.outdoor {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .legend-color.retreat {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .legend-color.conference {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .legend-color.miniretiro {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .month {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .month:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .month-header {
+            background: linear-gradient(135deg, #c9667e 0%, #d88c9a 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background: #e9ecef;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+
+        .weekday {
+            padding: 10px 5px;
+            text-align: center;
+            color: #495057;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            padding: 5px;
+        }
+
+        .day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .day:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+
+        .day.empty {
+            cursor: default;
+        }
+
+        .day.empty:hover {
+            background: transparent;
+            transform: none;
+        }
+
+        .day.event {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+        }
+
+        .day.holiday {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(240, 147, 251, 0.4);
+        }
+
+        .day.thursday {
+            background: #e6d5f5;
+            color: #5a3d7a;
+            font-weight: 600;
+        }
+
+        .day.saturday {
+            background: #b3e5fc;
+            color: #01579b;
+            font-weight: 600;
+        }
+
+        .day.sunday {
+            color: #d32f2f;
+            font-weight: 600;
+        }
+
+        .day.outdoor {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(17, 153, 142, 0.4);
+        }
+
+        .day.retreat {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(240, 147, 251, 0.4);
+        }
+
+        .day.conference {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(250, 112, 154, 0.4);
+        }
+
+        .day.miniretiro {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: #6b1b3d;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(255, 154, 158, 0.4);
+        }
+
+        .activities {
+            padding: 30px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .activities h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .activity-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .activity-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .activity-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .activity-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .google-cal-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 0.9em;
+            transition: transform 0.3s ease;
+        }
+
+        .google-cal-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            background: #1e3c72;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .footer a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .calendar-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vision-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .image-placeholder {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🕉️ Calendario 2026</h1>
+            <p>Centro Yoga Devanand Tunja</p>
+        </div>
+
+        <div class="vision-section">
+            <div class="image-placeholder">
+                <img src="https://elversiaucho.github.io/hosting/img/Maestro_Guru_Devanand.jpg" alt="Maestro Swami Guru Devanand">
+            </div>
+            
+            <div class="vision-content">
+                <div class="vision-item">
+                    <h3>🎯 Objetivo:</h3>
+                    <p>Facilitar el desarrollo espiritual, para alcanzar la conciencia plena y realización divina.</p>
+                </div>
+                
+                <div class="vision-item">
+                    <h3>🌍 Misión:</h3>
+                    <p>Contribuir a la paz mundial a través de la paz individual con la experiencia directa del Mantra Yoga Meditación y algunas prácticas de la Filosofía yóguica, acordes con los lineamientos de la SIRD.</p>
+                </div>
+                
+                <div class="vision-item">
+                    <h3>✨ Visión:</h3>
+                    <p>El Centro Yoga Devanand de Tunja será reconocido por su constante promoción del desarrollo espiritual a través del Mantra Yoga Meditación y otras prácticas yóguicas esenciales.</p>
+                </div>
+            </div>
+            
+            <div class="image-placeholder">
+                <img src="https://elversiaucho.github.io/hosting/img/Logo-SIRD.png" alt="Escudo SIRD">
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-card">
+                <h3>📚 Clases de Hatha Yoga</h3>
+                <p><strong>Grupo A:</strong> Adultos mayores, señoras en embarazo y casos especiales</p>
+                <p><strong>Horario:</strong> Lunes y viernes de 8:30 a 9:30 am</p>
+                <hr style="margin: 15px 0; border: none; border-top: 1px solid #e9ecef;">
+                <p><strong>Grupo B:</strong> Adultos, jóvenes y niños</p>
+                <p><strong>Horario:</strong> Martes, miércoles y jueves de 7:00 a 8:00 am</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🙏 Actividades Permanentes</h3>
+                <p><strong>5:45 pm (Sábados):</strong> Ofrenda de amor, concentración y meditación</p>
+                <p><strong>5:45 pm (Jueves):</strong> Meditación iniciados</p>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color event"></div>
+                <span>Eventos Especiales Yoga</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color outdoor"></div>
+                <span>Yoga Outdoor</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color retreat"></div>
+                <span>Retiros (Semana Santa y Fin de Año)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color miniretiro"></div>
+                <span>Mini Retiros</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color conference"></div>
+                <span>Conferencias</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color holiday"></div>
+                <span>Festivos Colombia</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color thursday"></div>
+                <span>Meditación Iniciados (Jueves 5:45pm)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color saturday"></div>
+                <span>Ofrenda de Amor (Sábados 5:45pm)</span>
+            </div>
+        </div>
+
+        <div class="calendar-grid" id="calendar"></div>
+
+        <div class="activities">
+            <h2>✨ Eventos Especiales 2026</h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <h4>🎂 17 de Enero</h4>
+                    <p>Natalicio S.Gurú Devanand</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Natalicio+S.Gurú+Devanand&dates=20260117/20260118&details=Celebración+del+natalicio+de+Swami+Guru+Devanand&location=Centro+Yoga+Devanand+Tunja" target="_blank" class="google-cal-btn">📅 Agregar a Google Calendar</a>
+                </div>
+
+                <div class="activity-item">
+                    <h4>🌸 24 de Mayo</h4>
+                    <p>Mahasamadhi S.G. Devanand</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mahasamadhi+S.G.+Devanand&dates=20260524/20260525&details=Conmemoración+del+Mahasamadhi+de+Swami+Guru+Devanand&location=Centro+Yoga+Devanand+Tunja" target="_blank" class="google-cal-btn">📅 Agregar a Google Calendar</a>
+                </div>
+
+                <div class="activity-item">
+                    <h4>🧘‍♀️ 21 de Junio</h4>
+                    <p>Día Internacional del Yoga e Inmersión en Yoga</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Día+Internacional+del+Yoga&dates=20260621/20260622&details=Inmersión+en+Yoga+y+celebración+del+Día+Internacional+del+Yoga&location=Centro+Yoga+Devanand+Tunja" target="_blank" class="google-cal-btn">📅 Agregar a Google Calendar</a>
+                </div>
+
+                <div class="activity-item">
+                    <h4>🌊 13 de Septiembre</h4>
+                    <p>Inmersión en Yoga</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Inmersión+en+Yoga&dates=20260913/20260914&details=Jornada+de+Inmersión+en+prácticas+de+Yoga&location=Centro+Yoga+Devanand+Tunja" target="_blank" class="google-cal-btn">📅 Agregar a Google Calendar</a>
+                </div>
+
+                <div class="activity-item">
+                    <h4>🌿 7 de Marzo y 7 de Noviembre</h4>
+                    <p>Yoga Outdoor - Práctica al aire libre</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Yoga+Outdoor&dates=20260307/20260308&details=Práctica+de+Yoga+al+aire+libre&location=Centro+Yoga+Devanand+Tunja" target="_blank" class="google-cal-btn">📅 Agregar a Google Calendar</a>
+                </div>
+
+                <div class="activity-item">
+                    <h4>🏔️ 28, 29 y 30 de Marzo</h4>
+                    <p>Retiro de Semana Santa</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Retiro+de+Semana+Santa&dates=20260328/20260331&details=Retiro+especial+de+Semana+Santa&location=Centro+Yoga+Devanand+Tunja" target="_blank" class="google-cal-btn">📅 Agregar a Google Calendar</a>
+                </div>
+
+                <div class="activity-item">
+                    <h4>🎆 6, 7 y 8 de Diciembre</h4>
+                    <p>Retiro de Fin de Año</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Retiro+de+Fin+de+Año&dates=20261206/20261209&details=Retiro+especial+de+Fin+de+Año&location=Centro+Yoga+Devanand+Tunja" target="_blank" class="google-cal-btn">📅 Agregar a Google Calendar</a>
+                </div>
+
+                <div class="activity-item">
+                    <h4>🌸 Mini Retiros</h4>
+                    <p>21 de febrero, 23 de mayo, 22 de agosto y 24 de octubre</p>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mini+Retiro&dates=20260221/20260222&details=Mini+Retiro+de+práctica+intensiva&location=Centro+Yoga+Devanand+Tunja" target="_blank" class="google-cal-btn">📅 Agregar a Google Calendar</a>
+                </div>
+
+                <div class="activity-item">
+                    <h4>🎤 Conferencias</h4>
+                    <p>27 de febrero, 8 de mayo, 24 de julio y 27 de noviembre</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>📍 Sede Tunja:</strong> Transversal 9A No. 28A 05 B. Maldonado</p>
+            <p><strong>📱 Teléfono:</strong> 3133244257</p>
+            <p><strong>🌐 Facebook:</strong> <a href="https://web.facebook.com/mantrayoga.meditacion" target="_blank">mantrayoga.meditacion</a></p>
+        </div>
+
+        <a href="https://wa.me/573183661146" target="_blank" class="whatsapp-btn" title="Contáctanos por WhatsApp">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.245 1.408 1.408-5.245-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.070 0-7.51 6.11-13.62 13.62-13.62s13.62 6.11 13.62 13.62c0 7.51-6.11 13.62-13.62 13.62zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.892 1.123-1.094 1.347c-0.201 0.224-0.402 0.251-0.748 0.076-0.346-0.174-1.461-0.539-2.785-1.722-1.031-0.922-1.727-2.058-1.929-2.404-0.201-0.346-0.022-0.533 0.152-0.707 0.156-0.155 0.346-0.402 0.518-0.603 0.174-0.201 0.231-0.346 0.346-0.571 0.117-0.224 0.058-0.427-0.028-0.603s-0.776-1.87-1.063-2.565c-0.28-0.672-0.56-0.58-0.776-0.591-0.201-0.010-0.431-0.012-0.661-0.012s-0.603 0.085-0.92 0.427c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.224 2.425 3.732 5.872 5.234 0.821 0.354 1.462 0.566 1.962 0.724 0.825 0.262 1.577 0.225 2.168 0.137 0.661-0.099 2.049-0.835 2.335-1.642 0.288-0.807 0.288-1.501 0.201-1.642-0.085-0.143-0.316-0.224-0.661-0.398z"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        const months = [
+            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+        ];
+
+        const weekdays = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+
+        const specialDates = {
+            '2026-01-17': 'Natalicio S.Gurú Devanand',
+            '2026-05-24': 'Mahasamadhi S.G. Devanand',
+            '2026-06-21': 'Día Internacional del Yoga',
+            '2026-09-13': 'Inmersión en Yoga'
+        };
+
+        const outdoorYoga = {
+            '2026-03-07': 'Yoga Outdoor',
+            '2026-11-07': 'Yoga Outdoor'
+        };
+
+        const retreats = {
+            '2026-03-28': 'Retiro de Semana Santa',
+            '2026-03-29': 'Retiro de Semana Santa',
+            '2026-03-30': 'Retiro de Semana Santa',
+            '2026-12-06': 'Retiro de Fin de Año',
+            '2026-12-07': 'Retiro de Fin de Año',
+            '2026-12-08': 'Retiro de Fin de Año'
+        };
+
+        const conferences = {
+            '2026-02-27': 'Conferencia',
+            '2026-05-08': 'Conferencia',
+            '2026-07-24': 'Conferencia',
+            '2026-11-27': 'Conferencia'
+        };
+
+        const miniRetiros = {
+            '2026-02-21': 'Mini Retiro',
+            '2026-05-23': 'Mini Retiro',
+            '2026-08-22': 'Mini Retiro',
+            '2026-10-24': 'Mini Retiro'
+        };
+
+        const holidays = {
+            '2026-01-01': 'Año Nuevo',
+            '2026-01-12': 'Día de los Reyes Magos',
+            '2026-03-23': 'Día de San José',
+            '2026-04-02': 'Jueves Santo',
+            '2026-04-03': 'Viernes Santo',
+            '2026-05-01': 'Día del Trabajo',
+            '2026-05-18': 'Día de la Ascensión',
+            '2026-06-08': 'Corpus Christi',
+            '2026-06-15': 'Sagrado Corazón de Jesús',
+            '2026-06-29': 'San Pedro y San Pablo',
+            '2026-07-20': 'Día de la Independencia',
+            '2026-08-07': 'Batalla de Boyacá',
+            '2026-08-17': 'Asunción de la Virgen',
+            '2026-10-12': 'Día de la Raza',
+            '2026-11-02': 'Día de Todos los Santos',
+            '2026-11-16': 'Independencia de Cartagena',
+            '2026-12-08': 'Día de la Inmaculada Concepción',
+            '2026-12-25': 'Navidad'
+        };
+
+        function getDaysInMonth(year, month) {
+            return new Date(year, month + 1, 0).getDate();
+        }
+
+        function getFirstDayOfMonth(year, month) {
+            return new Date(year, month, 1).getDay();
+        }
+
+        function getDayOfWeek(year, month, day) {
+            return new Date(year, month, day).getDay();
+        }
+
+        function createCalendar() {
+            const calendarDiv = document.getElementById('calendar');
+            const year = 2026;
+
+            for (let month = 0; month < 12; month++) {
+                const monthDiv = document.createElement('div');
+                monthDiv.className = 'month';
+
+                const monthHeader = document.createElement('div');
+                monthHeader.className = 'month-header';
+                monthHeader.textContent = months[month];
+                monthDiv.appendChild(monthHeader);
+
+                const weekdaysDiv = document.createElement('div');
+                weekdaysDiv.className = 'weekdays';
+                weekdays.forEach(day => {
+                    const dayDiv = document.createElement('div');
+                    dayDiv.className = 'weekday';
+                    dayDiv.textContent = day;
+                    weekdaysDiv.appendChild(dayDiv);
+                });
+                monthDiv.appendChild(weekdaysDiv);
+
+                const daysDiv = document.createElement('div');
+                daysDiv.className = 'days';
+
+                const firstDay = getFirstDayOfMonth(year, month);
+                const daysInMonth = getDaysInMonth(year, month);
+
+                for (let i = 0; i < firstDay; i++) {
+                    const emptyDiv = document.createElement('div');
+                    emptyDiv.className = 'day empty';
+                    daysDiv.appendChild(emptyDiv);
+                }
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayDiv = document.createElement('div');
+                    dayDiv.className = 'day';
+                    dayDiv.textContent = day;
+
+                    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    const dayOfWeek = getDayOfWeek(year, month, day);
+                    
+                    // Prioridad: festivos > retiros > mini retiros > outdoor > conferencias > eventos especiales > jueves > sábados > domingos
+                    if (holidays[dateStr]) {
+                        dayDiv.className += ' holiday';
+                        dayDiv.title = holidays[dateStr];
+                    } else if (retreats[dateStr]) {
+                        dayDiv.className += ' retreat';
+                        dayDiv.title = retreats[dateStr];
+                    } else if (miniRetiros[dateStr]) {
+                        dayDiv.className += ' miniretiro';
+                        dayDiv.title = miniRetiros[dateStr];
+                    } else if (outdoorYoga[dateStr]) {
+                        dayDiv.className += ' outdoor';
+                        dayDiv.title = outdoorYoga[dateStr];
+                    } else if (conferences[dateStr]) {
+                        dayDiv.className += ' conference';
+                        dayDiv.title = conferences[dateStr];
+                    } else if (specialDates[dateStr]) {
+                        dayDiv.className += ' event';
+                        dayDiv.title = specialDates[dateStr];
+                    } else if (dayOfWeek === 4) { // Jueves
+                        dayDiv.className += ' thursday';
+                        dayDiv.title = 'Meditación Iniciados - 5:45pm';
+                    } else if (dayOfWeek === 6) { // Sábado
+                        dayDiv.className += ' saturday';
+                        dayDiv.title = 'Ofrenda de amor, concentración y meditación - 5:45pm';
+                    } else if (dayOfWeek === 0) { // Domingo
+                        dayDiv.className += ' sunday';
+                    }
+
+                    daysDiv.appendChild(dayDiv);
+                }
+
+                monthDiv.appendChild(daysDiv);
+                calendarDiv.appendChild(monthDiv);
+            }
+        }
+
+        createCalendar();
+    </script>
+</body>
+</html>
